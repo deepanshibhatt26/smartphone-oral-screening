@@ -9,9 +9,9 @@ plt.rcParams.update({"font.family": "serif",
                      "pdf.fonttype": 42, "ps.fonttype": 42})
 
 FS, LFS = 6.6, 7.4                 # box / lane font sizes (pt)
-W_IN, H_IN = 7.16, 4.25
+W_IN, H_IN = 7.16, 3.75
 fig = plt.figure(figsize=(W_IN, H_IN))
-ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(0, 60); ax.axis("off")
+ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(0, 56); ax.axis("off")
 
 EDGE, TXT = "#404040", "#1a1a1a"
 LANE = ["#EEF3F9", "#F4F4F4", "#EEF3F9", "#F4F4F4"]
@@ -43,64 +43,54 @@ def arrow(p, q, dashed=False, conn="arc3"):
                                  ls=(0, (3, 2)) if dashed else "-", connectionstyle=conn,
                                  shrinkA=0, shrinkB=0))
 
-# ---- layout ---------------------------------------------------------------
-M, G = 0.8, 1.6                    # outer margin, gap between lanes
-LW = (100 - 2 * M - 3 * G) / 4     # lane width
+
+M, G = 0.8, 1.6
+LW = (100 - 2 * M - 3 * G) / 4
 X = [M + i * (LW + G) for i in range(4)]
-TOP_Y, TOP_H = 21.5, 37.7          # upper lanes
-BOT_Y, BOT_H = 0.8, 19.0           # bottom bands
+TOP_Y, TOP_H = 17.5, 37.7
+BOT_Y, BOT_H = 0.8, 15.2
 PAD = 1.0; BW = LW - 2 * PAD
-titles = ["1 · Public data", "2 · Curation and split", "3 · Models", "4 · Decision and assessment"]
+titles = ["1 · Public data", "2 · Curation and grouping", "3 · Experiments and modelling", "4 · Decision-making"]
 for x, t, c in zip(X, titles, LANE):
     lane(x, TOP_Y, LW, TOP_H, t, c)
-lane(X[0], BOT_Y, 2 * LW + G, BOT_H, "6 · Habit-from-photo (mouths clear of lesions)", BAND)
-lane(X[2], BOT_Y, 2 * LW + G, BOT_H, "5 · Explainability", BAND)
+lane(X[0], BOT_Y, 2 * LW + G, BOT_H, "5 · Barriers to generalisability", BAND)
+lane(X[2], BOT_Y, 2 * LW + G, BOT_H, "6 · Model explainability", BAND)
 bx = [x + PAD for x in X]
-
 # 1 data
-d1 = box(bx[0], 48.5, BW, 7.0, "CODE v5 + SMART-OM\nsmartphone intraoral photos")
-d2 = box(bx[0], 38.5, BW, 7.0, "Habit questionnaire\ntobacco · smokeless ·\nareca nut · alcohol")
-d4 = box(bx[0], 24.0, BW, 7.5, "Karnataka oral images\n323 photos\nexternal test only", dashed=True)
+d1 = box(bx[0], 44.5, BW, 7.0, "India: CODE and SMART-OM\n7,928 images · 1,009 patients")
+d2 = box(bx[0], 35.0, BW, 7.0, "Sri Lanka (Zenodo)\n2,988 images · 712 patients\nlesion and mouth markings")
+d3 = box(bx[0], 27.0, BW, 5.5, "Behaviour data\nSMART-OM · Sri Lanka")
+d4 = box(bx[0], 19.0, BW, 6.0, "Karnataka (India)\n323 lesion images\nexternal test only", dashed=True)
 # 2 curation
-c1 = box(bx[1], 49.0, BW, 6.5, "De-duplication (MD5)\nEXIF-upright · 512 px")
-c2 = box(bx[1], 40.5, BW, 6.5, "7,928 unique photos · 1,009 people\n158 OPMD/cancer photos (78 people)")
-c3 = box(bx[1], 30.5, BW, 8.0, "Frozen patient-level split\n5 folds, stratified by\ndiagnosis × dataset × tobacco")
-c4 = box(bx[1], 23.0, BW, 5.5, "Leakage check\nno person in two folds")
-# 3 models
-m1 = box(bx[2], 47.0, BW, 8.5, "Frozen foundation models\n+ linear probe: DINOv2, CLIP,\nBiomedCLIP, ConvNeXt,\nEfficientNet")
-m2 = box(bx[2], 36.5, BW, 8.0, "Fine-tuning\nConvNeXt-B (full)\nCLIP ViT-B/16 + LoRA")
-m3 = box(bx[2], 26.5, BW, 7.5, "Patient score\n(all photos of a person)\nmax · mean · attention-MIL")
+c1 = box(bx[1], 45.0, BW, 6.5, "De-duplication\nMD5 and difference hashing")
+c2 = box(bx[1], 35.5, BW, 7.0, "5 patient-level folds\nstratified by diagnosis ×\norigin × tobacco/betel")
+c3 = box(bx[1], 27.5, BW, 5.5, "Leakage check\nno patient in >1 fold")
+c4 = box(bx[1], 19.0, BW, 6.5, "Class definitions\npositive = OPMD or cancer\nnegative = healthy or benign")
+# 3 experiments + model
+m1 = box(bx[2], 42.0, BW, 9.5, "Three experiments\nIndia → Sri Lanka\nSri Lanka → India (+ Karnataka)\nbi-national, 5-fold CV")
+m2 = box(bx[2], 30.5, BW, 9.0, "Model (224 px)\nCLIP ViT-B/16 and LoRA\nplus frozen ConvNeXt, DINOv2, CLIP\nweights chosen on validation")
+m3 = box(bx[2], 20.5, BW, 7.5, "Patient score\nmean of a patient's\ntwo highest image scores")
 # 4 decision
-e1 = box(bx[3], 48.5, BW, 7.0, "Calibration & threshold\nPlatt scaling\n≥ 90 % sensitivity")
-e2 = box(bx[3], 38.5, BW, 7.5, "Image + habit fusion\nlogistic / boosting\nSHAP explanations")
-e3 = box(bx[3], 23.0, BW, 12.5, "Evaluation\ninternal 5-fold CV\n(photo & patient level)\nexternal Karnataka test\npatient-bootstrap 95 % CI")
-# bottom bands
+e1 = box(bx[3], 44.0, BW, 7.5, "Calibration\nPlatt scaling · prior shift\n50 local labelled patients")
+e2 = box(bx[3], 34.0, BW, 7.5, "Decision threshold\n≥ 90 % sensitivity\nglobal or country-specific")
+e3 = box(bx[3], 26.0, BW, 5.5, "Behaviour and image fusion\nlogistic regression · TabPFN")
+e4 = box(bx[3], 19.0, BW, 5.0, "Evaluation\npatient and image AUC (95 % CI)")
 BBW = 2 * LW + G - 2 * PAD
-h1 = box(bx[0], 9.8, BBW, 6.0, "Matched cohort: 65 tobacco users vs 181 non-users\nexact sex · dataset · clinical finding; age ± 5 y")
-h2 = box(bx[0], 2.2, BBW, 5.8, "Image-only CV · within-set permutation test\nunmatched contrast · resolution 224 → 518 px")
-x1 = box(bx[2], 9.8, BBW, 6.0, "Grad-CAM vs 144 expert lesion outlines\npointing game · energy · IoU vs centre prior")
-x2 = box(bx[2], 2.2, BBW, 5.8, "Attention-MIL check\ndoes the top-weighted photo show the lesion?")
+h1 = box(bx[0], 8.6, BBW, 5.0, "Sub-task AUCs: no benign patients · lesions only · cancer vs non-cancer")
+h2 = box(bx[0], 2.0, BBW, 5.0, "Country signature in the images (shortcut check)")
+x1 = box(bx[2], 8.6, BBW, 5.0, "HiResCAM heatmaps of the CLIP-LoRA model")
+x2 = box(bx[2], 2.0, BBW, 5.0, "Heatmap energy inside expert markings: SMART-OM 144 · Sri Lanka 1,523 images")
 
 def elbow(p, q, dashed=False):
-    """horizontal - vertical - horizontal connector ending in an arrow"""
-    mx = (p[0] + q[0]) / 2
-    ls = (0, (3, 2)) if dashed else "-"
+    mx = (p[0] + q[0]) / 2; ls = (0, (3, 2)) if dashed else "-"
     ax.plot([p[0], mx, mx], [p[1], p[1], q[1]], color=EDGE, lw=0.75, ls=ls, solid_capstyle="butt")
     arrow((mx, q[1]), q, dashed)
-
-# ---- arrows ---------------------------------------------------------------
-arrow(d1["r"], (c1["x"], d1["r"][1]))
-for a, b in [(c1, c2), (c2, c3), (c3, c4), (m2, m3), (e1, e2), (e2, e3)]:
+for a, b in [(c1, c2), (c2, c3), (m1, m2), (m2, m3), (e1, e2), (e2, e3), (e3, e4)]:
     arrow(a["b"], b["t"])
+elbow(d1["r"], c1["l"]); elbow(d2["r"], c1["l"])
 elbow(c3["r"], m1["l"])
-elbow(c3["r"], m2["l"])
-arrow(m1["r"], (e1["x"], m1["r"][1]))
-elbow(m3["r"], (e1["x"], e1["y"] + 1.2))
-# habits -> fusion: run along the top gap above lane 2/3 boxes would clutter; label instead
-ax.text(e2["x"] + 0.4, e2["y"] + e2["h"] + 0.35, "habits from 1", fontsize=5.6, style="italic", color="#555555")
-ax.plot([d4["b"][0]]*2, [d4["b"][1], 20.6], color=EDGE, lw=0.75, ls=(0, (3, 2)))
-ax.plot([d4["b"][0], e3["x"] + e3["w"] / 2], [20.6, 20.6], color=EDGE, lw=0.75, ls=(0, (3, 2)))
-arrow((e3["x"] + e3["w"] / 2, 20.6), e3["b"], dashed=True)
-for out in ("pipeline.pdf", "pipeline.png"):
+elbow(m3["r"], e1["l"])
+ax.text(e3["x"] + 0.3, e3["y"] + e3["h"] + 0.35, "behaviour from 1", fontsize=5.4, style="italic", color="#555555")
+for out in ("pipeline_v7.pdf", "pipeline_v7.png"):
     fig.savefig(out, dpi=300)
 print("saved")
