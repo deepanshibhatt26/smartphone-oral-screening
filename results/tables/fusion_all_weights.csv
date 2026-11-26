@@ -1,0 +1,7 @@
+experiment,habit model,chosen weight w,source val patient AUC,source val patients,source train patients
+exp1 India -> Sri Lanka,LR,0.0,1.0,62,241
+exp1 India -> Sri Lanka,GBDT,0.0,1.0,62,241
+exp1 India -> Sri Lanka,TabPFN,0.0,1.0,62,241
+exp2 Sri Lanka -> India (SMART-OM),LR,0.25,0.854,143,569
+exp2 Sri Lanka -> India (SMART-OM),GBDT,0.5,0.857,143,569
+exp2 Sri Lanka -> India (SMART-OM),TabPFN,0.75,0.86,143,569

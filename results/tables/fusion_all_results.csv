@@ -1,0 +1,36 @@
+experiment,model,patients,positive,patient AUC,95% CI,vs image only (95% CI)
+exp1 India -> Sri Lanka,Image only,712,381,0.707,0.668-0.744,
+exp1 India -> Sri Lanka,"Habits only, LR",712,381,0.702,0.663-0.740,-0.058 to +0.045
+exp1 India -> Sri Lanka,"Image + habits, LR",712,381,0.707,0.668-0.744,+0.000 to +0.000
+exp1 India -> Sri Lanka,"Habits only, GBDT",712,381,0.694,0.658-0.732,-0.065 to +0.034
+exp1 India -> Sri Lanka,"Image + habits, GBDT",712,381,0.707,0.668-0.744,+0.000 to +0.000
+exp1 India -> Sri Lanka,"Habits only, TabPFN",712,381,0.68,0.641-0.716,-0.079 to +0.021
+exp1 India -> Sri Lanka,"Image + habits, TabPFN",712,381,0.707,0.668-0.744,+0.000 to +0.000
+exp2 Sri Lanka -> India (SMART-OM),Image only,303,63,0.823,0.765-0.880,
+exp2 Sri Lanka -> India (SMART-OM),"Habits only, LR",303,63,0.608,0.504-0.701,-0.347 to -0.097
+exp2 Sri Lanka -> India (SMART-OM),"Image + habits, LR",303,63,0.865,0.820-0.907,+0.015 to +0.071
+exp2 Sri Lanka -> India (SMART-OM),"Habits only, GBDT",303,63,0.633,0.548-0.719,-0.303 to -0.070
+exp2 Sri Lanka -> India (SMART-OM),"Image + habits, GBDT",303,63,0.866,0.816-0.906,+0.001 to +0.089
+exp2 Sri Lanka -> India (SMART-OM),"Habits only, TabPFN",303,63,0.66,0.584-0.740,-0.266 to -0.048
+exp2 Sri Lanka -> India (SMART-OM),"Image + habits, TabPFN",303,63,0.871,0.827-0.913,-0.004 to +0.110
+"exp3 both, India (SMART-OM)",Image only,303,63,0.945,0.916-0.971,
+"exp3 both, India (SMART-OM)","Habits only, LR",303,63,0.753,0.678-0.822,-0.280 to -0.111
+"exp3 both, India (SMART-OM)","Image + habits, LR",303,63,0.943,0.910-0.970,-0.021 to +0.018
+"exp3 both, India (SMART-OM)","Habits only, GBDT",303,63,0.729,0.643-0.800,-0.302 to -0.133
+"exp3 both, India (SMART-OM)","Image + habits, GBDT",303,63,0.918,0.873-0.950,-0.049 to -0.011
+"exp3 both, India (SMART-OM)","Habits only, TabPFN",303,63,0.787,0.708-0.856,-0.239 to -0.081
+"exp3 both, India (SMART-OM)","Image + habits, TabPFN",303,63,0.943,0.911-0.968,-0.014 to +0.012
+"exp3 both, Sri Lanka",Image only,712,381,0.834,0.804-0.861,
+"exp3 both, Sri Lanka","Habits only, LR",712,381,0.755,0.719-0.791,-0.116 to -0.039
+"exp3 both, Sri Lanka","Image + habits, LR",712,381,0.86,0.834-0.885,+0.014 to +0.040
+"exp3 both, Sri Lanka","Habits only, GBDT",712,381,0.753,0.717-0.784,-0.119 to -0.044
+"exp3 both, Sri Lanka","Image + habits, GBDT",712,381,0.853,0.825-0.880,+0.002 to +0.037
+"exp3 both, Sri Lanka","Habits only, TabPFN",712,381,0.761,0.724-0.795,-0.110 to -0.037
+"exp3 both, Sri Lanka","Image + habits, TabPFN",712,381,0.861,0.834-0.884,+0.013 to +0.042
+"exp3 both, pooled",Image only,1015,444,0.882,0.863-0.903,
+"exp3 both, pooled","Habits only, LR",1015,444,0.764,0.736-0.794,-0.148 to -0.084
+"exp3 both, pooled","Image + habits, LR",1015,444,0.898,0.879-0.917,+0.007 to +0.026
+"exp3 both, pooled","Habits only, GBDT",1015,444,0.751,0.718-0.783,-0.164 to -0.095
+"exp3 both, pooled","Image + habits, GBDT",1015,444,0.889,0.870-0.908,-0.005 to +0.019
+"exp3 both, pooled","Habits only, TabPFN",1015,444,0.765,0.734-0.796,-0.149 to -0.084
+"exp3 both, pooled","Image + habits, TabPFN",1015,444,0.899,0.880-0.917,+0.007 to +0.027

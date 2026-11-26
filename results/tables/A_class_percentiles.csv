@@ -1,0 +1,17 @@
+test set,class,patients,median score percentile,mean percentile
+exp1 India->Sri Lanka,healthy,89,17.0,22.3
+exp1 India->Sri Lanka,benign,242,43.2,45.2
+exp1 India->Sri Lanka,OPMD,320,57.9,56.8
+exp1 India->Sri Lanka,cancer,61,78.9,75.0
+exp2 Sri Lanka->India,healthy,750,45.4,46.9
+exp2 Sri Lanka->India,benign,181,57.1,55.3
+exp2 Sri Lanka->India,OPMD,70,81.6,72.3
+exp2 Sri Lanka->India,cancer,8,30.2,35.0
+exp3 both: India,healthy,750,40.5,41.4
+exp3 both: India,benign,181,74.6,67.5
+exp3 both: India,OPMD,70,95.3,93.2
+exp3 both: India,cancer,8,95.2,85.2
+exp3 both: Sri Lanka,healthy,89,18.4,24.2
+exp3 both: Sri Lanka,benign,242,30.8,35.1
+exp3 both: Sri Lanka,OPMD,320,70.4,66.7
+exp3 both: Sri Lanka,cancer,61,64.7,59.6

@@ -1,0 +1,8 @@
+exp,test,photo AUC LoRA,photo AUC ens,patient AUC LoRA,patient AUC ens,per-fold mean patient AUC LoRA,per-fold mean patient AUC ens,ens 95% CI,delta 95% CI,n patients
+1,srilanka,0.643,0.654,0.706,0.707,0.706,0.707,0.668-0.744,-0.015 to +0.017,712.0
+2,india,0.714,0.783,0.621,0.7,0.621,0.7,0.634-0.756,+0.046 to +0.111,1009.0
+2,Karnataka,0.669,0.703,,,,,,,
+3,pooled,0.955,0.961,0.929,0.938,0.931,0.939,0.927-0.950,+0.005 to +0.015,1721.0
+3,India part,0.931,0.977,0.929,0.959,0.942,0.961,0.933-0.979,+0.008 to +0.057,1009.0
+3,Sri Lanka part,0.797,0.807,0.819,0.834,0.821,0.835,0.802-0.861,+0.002 to +0.029,712.0
+3,Karnataka,0.81,0.819,,,,,,,

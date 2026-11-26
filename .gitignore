@@ -1,0 +1,13 @@
+src/mac_kit/
+src/mac_results*/
+src/oral_env/
+src/tabpfn_env/
+data/
+*.npz
+*.npy
+*.pt
+*.pth
+*.safetensors
+*.zip
+__pycache__/
+.DS_Store

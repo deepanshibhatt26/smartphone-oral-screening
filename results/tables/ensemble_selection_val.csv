@@ -1,0 +1,4 @@
+exp,chosen LoRA weight,frozen members,patient score,val patient AUC chosen,val patient AUC LoRA-max
+1,0.75,ConvNeXt-B,top2,0.975,0.972
+2,0.6,ConvNeXt-B,max,0.842,0.833
+3,0.6,ConvNeXt-B+DINOv2-B14+CLIP-B16,top2,0.94,0.933

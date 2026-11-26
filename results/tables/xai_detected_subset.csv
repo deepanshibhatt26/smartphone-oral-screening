@@ -1,0 +1,21 @@
+photos,method,n photos,n patients,deletion: mean change in log-odds (95% CI),hit,energy,iou
+"SMART-OM (model says disease, p>=0.5)",Grad-CAM,97,59,-5.73 (-6.34 to -5.22),,,
+"SMART-OM (model says disease, p>=0.5)",HiResCAM,97,59,-4.19 (-4.77 to -3.64),,,
+"SMART-OM (model says disease, p>=0.5)",Attention rollout,97,59,-1.65 (-1.99 to -1.29),,,
+"SMART-OM (model says disease, p>=0.5)",Random order,97,59,-2.57 (-2.88 to -2.25),,,
+"SMART-OM (model says disease, p>=0.5)",HiResCAM,97,59,,0.856 (0.779-0.927),,
+"SMART-OM (model says disease, p>=0.5)",HiResCAM,97,59,,,0.610 (0.555-0.665),
+"SMART-OM (model says disease, p>=0.5)",HiResCAM,97,59,,,,0.397 (0.357-0.440)
+"SMART-OM (model says disease, p>=0.5)",Grad-CAM,97,59,,0.619 (0.522-0.717),,
+"SMART-OM (model says disease, p>=0.5)",Grad-CAM,97,59,,,0.388 (0.342-0.433),
+"SMART-OM (model says disease, p>=0.5)",Grad-CAM,97,59,,,,0.321 (0.277-0.362)
+"Sri Lanka (model says disease, p>=0.5)",Grad-CAM,204,152,-4.65 (-4.87 to -4.43),,,
+"Sri Lanka (model says disease, p>=0.5)",HiResCAM,204,152,-2.86 (-3.10 to -2.62),,,
+"Sri Lanka (model says disease, p>=0.5)",Attention rollout,204,152,-1.25 (-1.43 to -1.05),,,
+"Sri Lanka (model says disease, p>=0.5)",Random order,204,152,-1.51 (-1.69 to -1.33),,,
+"Sri Lanka (model says disease, p>=0.5)",HiResCAM,204,152,,0.544 (0.478-0.609),,
+"Sri Lanka (model says disease, p>=0.5)",HiResCAM,204,152,,,0.326 (0.293-0.361),
+"Sri Lanka (model says disease, p>=0.5)",HiResCAM,204,152,,,,0.263 (0.237-0.290)
+"Sri Lanka (model says disease, p>=0.5)",Grad-CAM,204,152,,0.544 (0.473-0.609),,
+"Sri Lanka (model says disease, p>=0.5)",Grad-CAM,204,152,,,0.301 (0.268-0.335),
+"Sri Lanka (model says disease, p>=0.5)",Grad-CAM,204,152,,,,0.270 (0.242-0.298)

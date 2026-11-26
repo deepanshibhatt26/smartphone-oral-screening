@@ -1,0 +1,6 @@
+experiment,test patients,n,prevalence,ECE raw,ECE Platt (shared),ECE Platt (per country),shared thr sensitivity,shared thr specificity,shared thr referral rate,per-country thr sensitivity,per-country thr specificity,per-country thr referral rate,source prevalence,ECE Platt (source),ECE prior-shift EM,EM estimated prevalence,source thr sensitivity,source thr specificity,source thr referral rate,oracle thr sensitivity,oracle thr specificity,oracle thr referral rate,local-50 ECE,local-50 sensitivity,local-50 specificity,local-50 referral rate
+exp3 both (5-fold),India,1009,0.077,0.413,0.021,0.014,0.718,0.971,0.082,0.897,0.895,0.167,,,,,,,,,,,,,,
+exp3 both (5-fold),Sri Lanka,712,0.535,0.243,0.052,0.033,0.927,0.453,0.75,0.906,0.532,0.702,,,,,,,,,,,,,,
+exp3 both (5-fold),all,1721,0.267,0.346,0.026,,0.891,0.835,0.359,0.904,0.8,0.388,,,,,,,,,,,,,,
+exp1 India->Sri Lanka,target,712,0.535,0.308,,,,,,,,,0.169,0.266,0.129,0.534,0.661,0.647,0.518,0.9,0.35,0.784,0.089 (0.038-0.190),0.877 (0.708-0.977),0.380 (0.208-0.582),0.757 (0.574-0.893)
+exp2 Sri Lanka->India,target,1009,0.077,0.483,,,,,,,,,0.524,0.394,0.221,0.299,0.833,0.381,0.635,0.91,0.285,0.73,0.041 (0.016-0.094),0.753 (0.274-1.000),0.442 (0.002-0.907),0.573 (0.107-0.998)
